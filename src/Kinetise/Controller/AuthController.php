@@ -39,7 +39,7 @@ class AuthController extends AbstractController
              * Create new session id and add it ro users metadata
              */
             $sessionId =  md5($user->get('user_login').time());
-            \update_user_meta($user->ID, '_kinetise_session_id', $sessionId);
+            \add_user_meta($user->ID, '_kinetise_session_id', $sessionId);
 
             if ($deviceToken) {
                 \update_user_meta($user->ID, '_kinetise_device_token', $deviceToken);
@@ -57,10 +57,9 @@ class AuthController extends AbstractController
     public function logoutAction()
     {
         $user = $this->getUserBySessionId();
-        if ($user)
-        {
-            \delete_user_meta($user->ID, '_kinetise_session_id');
-            \delete_user_meta($user->ID, '_kinetise_device_token');
+        if ($user) {
+            $sessionId = $this->getRequest()->query->get('sessionId', false);
+            \delete_user_meta($user->ID, '_kinetise_session_id', $sessionId);
         }
         return new JsonResponse();
     }
