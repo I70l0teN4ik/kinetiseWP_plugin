@@ -31,10 +31,13 @@ class PostsMapper implements Mapper
             $this->data[$key] = $post->to_array();
 
             if (isset($this->data[$key]['post_content'])) {
-                $emptyImg = '<img src="' . \plugins_url('images/empty.png', KINETISE_ROOT . DS . 'kinetise.php') . '">';
-                $val = $this->data[$key]['post_content'] . $emptyImg;
+                $content = $this->data[$key]['post_content'];
+                if (false === strpos($content, "<img")) {
+                    $emptyImg = ' <img src="' . \plugins_url('images/empty.png', KINETISE_ROOT . DS . 'kinetise.php') . '">';
+                    $content .= $emptyImg;
+                }
                 unset($this->data[$key]['post_content']);
-                $this->data[$key] = array('description' => $val) + $this->data[$key];
+                $this->data[$key] = array('description' => $content) + $this->data[$key];
             }
 
             if (isset($this->data[$key]['post_title'])) {
@@ -45,6 +48,12 @@ class PostsMapper implements Mapper
 
             $this->data[$key] = array('id' => $postId) + $this->data[$key];
             unset($this->data[$key]['ID']);
+
+            // add post author name
+            $author = \get_user_by('id', $this->data[$key]['post_author']);
+            if (!\is_wp_error($author)) {
+                $this->data[$key]['post_author_name'] = $author->user_nicename;
+            }
 
             $date = \DateTime::createFromFormat('Y-m-d H:i:s', $this->data[$key]['post_date']);
             $this->data[$key]['post_date'] = $date->format(\DateTime::RFC3339);

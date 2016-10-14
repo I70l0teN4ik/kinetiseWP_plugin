@@ -11,6 +11,7 @@
         <p>
             This plugins add functionality to return resources info in JSON.
         </p>
+        <iframe src="https://player.vimeo.com/video/181953664" width="640" height="401" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     </div>
     <div class="row">
         <div style="width: 100%;">
@@ -85,11 +86,17 @@
                     </table>
 
 <pre>
-<span class="description">API will respond with new session ID in case of successful authorization. Example:</span>
+<span class="description">API will respond with new session ID and current <a href="/wp-admin/users.php"><i class="wp-menu-image dashicons-before dashicons-admin-users"></i>User Role</a> in case of successful authorization. Example:</span>
 <code>{
-    "sessionId": "15213923eb13674ca4e07063a63a4638"
+    "sessionId": "15213923eb13674ca4e07063a63a4638",
+    applicationVariables: {
+        "_USER_ROLE":"editor"
+    }
  }</code>
-<span class="description">Now users can login into your app using their credentials from your site.</span>
+<span class="description">
+    Now users can login into your app using their credentials from your site.
+    You can specify on which screen will be redirected user after login depending on user's role.
+</span>
 </pre>
                 </div>
 
@@ -261,11 +268,11 @@
                         <tbody>
                         <tr>
                             <td>guid</td>
-                            <td>Actual link to page</td>
+                            <td>Actual link to current page.</td>
                         </tr>
                         <tr>
                             <td>preview_url</td>
-                            <td>Preview page in html (for mobiles)</td>
+                            <td>Preview page content in html (for mobiles). Could be used on a detail screen with "web browser" widget.</td>
                         </tr>
                         <tr>
                             <td>comments_url</td>
@@ -396,7 +403,7 @@
                 </div>
 
                 <div class="reference active">
-                    <p class="description">List of categories for dropdown:</p>
+                    <p class="description">List of categories for dropdown and link to create new post action:</p>
 
                     <code>[GET]
                         <a href="<?php echo \site_url(); ?>/?kinetiseapi=categories:list" target="_blank">
@@ -407,7 +414,8 @@
     "results": [
         {
         "id": 1,
-        "categoriesList": "[{"value":1,"text":"Uncategorized"}]"
+        "categoriesList": "[{"value":1,"text":"Uncategorized"}]",
+        "post_add_url": "<?php echo \site_url(); ?>/?kinetiseapi=posts:add"
         }
     ]
 }</code></pre>
@@ -530,11 +538,11 @@
                         <tbody>
                         <tr>
                             <td>guid</td>
-                            <td>Actual link to post</td>
+                            <td>Actual link to current post.</td>
                         </tr>
                         <tr>
                             <td>preview_url</td>
-                            <td>Preview page in html (for mobiles)</td>
+                            <td>Preview post content in html (for mobiles). Could be used on a detail screen with "web browser" widget.</td>
                         </tr>
                         <tr>
                             <td>comments_url</td>

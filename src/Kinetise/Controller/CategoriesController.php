@@ -40,7 +40,10 @@ class CategoriesController extends AbstractController
             $catName = $row->cat_name;
             array_push($categoriesList, array('value' => $catID, 'text' => $catName));
         }
-        $categoriesResponse = array(array("id"=>1, "categoriesList" => json_encode($categoriesList)));
+        $postAddUrl = UrlGenerator::generate('posts', 'add', array('sessionId=' => "%23%23GetSessionId%23%23"));
+        $categoriesResponse = array(
+            array("id"=>1, "categoriesList" => json_encode($categoriesList), "post_add_url" => $postAddUrl)
+        );
 
         return new KinetiseItemResponse($categoriesResponse);
     }

@@ -108,20 +108,6 @@ class Bootstrap
 
         \add_submenu_page(
             'kinetise-api',
-            'Tutorial',
-            'Tutorial',
-            'manage_options',
-            'kinetise-api-tutorial',
-            function () {
-                ob_start();
-                include KINETISE_ROOT . DS . 'pluginView' . DS . 'tutorial.php';
-                $rendered = ob_get_clean();
-                echo $rendered;
-            }
-        );
-
-        \add_submenu_page(
-            'kinetise-api',
             'Reference',
             'Reference',
             'manage_options',
@@ -129,6 +115,20 @@ class Bootstrap
             function () {
                 ob_start();
                 include KINETISE_ROOT . DS . 'pluginView' . DS . 'reference.php';
+                $rendered = ob_get_clean();
+                echo $rendered;
+            }
+        );
+
+        \add_submenu_page(
+            'kinetise-api',
+            'Tutorial',
+            'Tutorial',
+            'manage_options',
+            'kinetise-api-tutorial',
+            function () {
+                ob_start();
+                include KINETISE_ROOT . DS . 'pluginView' . DS . 'tutorial.php';
                 $rendered = ob_get_clean();
                 echo $rendered;
             }
