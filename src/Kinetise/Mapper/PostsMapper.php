@@ -52,7 +52,7 @@ class PostsMapper implements Mapper
             // add post author name
             $author = \get_user_by('id', $this->data[$key]['post_author']);
             if (!\is_wp_error($author)) {
-                $this->data[$key]['post_author_name'] = $author->user_nicename;
+                $this->data[$key]['post_author_name'] = $author->display_name;
             }
 
             $date = \DateTime::createFromFormat('Y-m-d H:i:s', $this->data[$key]['post_date']);
@@ -68,6 +68,7 @@ class PostsMapper implements Mapper
             $this->data[$key]['post_modified_gmt'] = $date->format(\DateTime::RFC3339);
 
             $this->data[$key]['preview_url'] = UrlGenerator::generate('preview', null, array('postId' => $post->ID));
+            $this->data[$key]['description_preview_url'] = UrlGenerator::generate('preview', 'description', array('postId' => $post->ID));
 
             $thumbnailId = \get_post_thumbnail_id($postId);
             $image = \wp_get_attachment_image_src($thumbnailId, 'full');

@@ -4,12 +4,94 @@
         <span>Tutorial</span>
     </h1>
 
+    <p>
+    <iframe src="https://player.vimeo.com/video/177245340?color=ffcd29&title=0&byline=0&portrait=0" width="640" height="401" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </p>
     <h2 id="kinetise-tutorial-header" class="tutorial-header" data-container="first-tutorial">
-        <span data-container="first-tutorial">Displaying list of pages / posts / categories</span>
-        <span data-container="third-tutorial">Add new post</span>
-        <span data-container="second-tutorial">Add and display post comments</span>
         <span data-container="basic-app-tutorial">Basic Wordpress App with Kinetise</span>
+        <span data-container="third-tutorial">Add new post</span>
+        <span data-container="first-tutorial">Displaying list of pages / posts / categories</span>
+        <span data-container="second-tutorial">Add and display post comments</span>
     </h2>
+
+    <div class="row-3" id="basic-app-tutorial">
+        <div>
+            <div class="row-col">
+                <img src="<?php echo plugins_url('images/tutorial/3_a.png', KINETISE_ROOT . DS . 'kinetise.php') ?>"
+                     width="300px" height="300px">
+                <p>Use list widget.</p>
+            </div>
+
+            <div class="row-col">
+                <img src="<?php echo plugins_url('images/tutorial/3_b.png', KINETISE_ROOT . DS . 'kinetise.php') ?>"
+                     width="300px" height="300px">
+                <p>On main screen use list widget with the following link and click <strong>"OK"</strong>:</p>
+                <p>
+                    <code><?php echo \site_url(); ?>/?kinetiseapi</code>
+                </p>
+            </div>
+
+            <div class="row-col">
+                <img src="<?php echo plugins_url('images/tutorial/3_c.png', KINETISE_ROOT . DS . 'kinetise.php') ?>"
+                     width="300px" height="300px">
+                <p>Use navigation tree on the left side and delete <strong>"Image"</strong> widget from list item</p>
+            </div>
+        </div>
+
+        <div>
+            <div class="row-col">
+                <img src="<?php echo plugins_url('images/tutorial/3_d.png', KINETISE_ROOT . DS . 'kinetise.php') ?>"
+                     width="300px" height="300px">
+                <p>Then expand <strong>"Vertical Container"</strong> and remove 2nd <strong>"Text"</strong> widget</p>
+            </div>
+
+            <div class="row-col">
+                <img src="<?php echo plugins_url('images/tutorial/3_e.png', KINETISE_ROOT . DS . 'kinetise.php') ?>"
+                     width="300px" height="300px">
+                <p>Time to add some screens. Let create three of them:</p>
+                <code><strong>Pages</strong>, <strong>Posts</strong> and <strong>Categories</strong></code>
+            </div>
+
+            <div class="row-col">
+                <img src="<?php echo plugins_url('images/tutorial/3_i.png', KINETISE_ROOT . DS . 'kinetise.php') ?>"
+                     width="300px" height="300px">
+                <p>Go to <strong>"Main screen"</strong> and from navigation tree edit <strong>"List"</strong>
+                    widget</p>
+            </div>
+        </div>
+
+        <div>
+            <div class="row-col">
+                <img src="<?php echo plugins_url('images/tutorial/3_f.png', KINETISE_ROOT . DS . 'kinetise.php') ?>"
+                     width="300px" height="300px">
+                <p>In <strong>"Settings"</strong> window under <strong>"Extra options"</strong> section create three item templates - "Pages", "Categories" and "Posts".</p>
+            </div>
+
+            <div class="row-col">
+                <img src="<?php echo plugins_url('images/tutorial/3_j.png', KINETISE_ROOT . DS . 'kinetise.php') ?>"
+                     width="300px" height="300px">
+                <p>Eeach item template should filter by <strong> "title" </strong> field and redirect to the corresponding details screen.</p>
+            </div>
+
+            <div class="row-col">
+                <img src="<?php echo plugins_url('images/tutorial/3_g.png', KINETISE_ROOT . DS . 'kinetise.php') ?>"
+                     width="300px" height="300px">
+                <p>Then using right mouse button click on <strong>"Pages"</strong> item inside list. You will be
+                    moved to details screen for pages.</p>
+            </div>
+        </div>
+        <div>
+            <div class="row-col">
+                <img src="<?php echo plugins_url('images/tutorial/3_h.png', KINETISE_ROOT . DS . 'kinetise.php') ?>"
+                     width="300px" height="300px">
+                <p>Place
+                    <string>"List"</string>
+                    widget on each new detail screen. In the <strong>"Settings"</strong> window select <strong>"Dynamic"</strong> source. From here
+                    you can select <strong>"URL"</strong> option to load your Wordpress pages.
+                </p>
+            </div>
+        </div>
+    </div>
 
     <div class="row-3" id="first-tutorial">
         <div class="row-col">
@@ -108,85 +190,6 @@
                  width="300px" height="300px">
             <p>Select <strong>"Dynamic"</strong> form address. From the dropdown list in API URL select <strong>"COMMENTS_URL_ADD".</strong>
             </p>
-        </div>
-    </div>
-
-    <div class="row-3" id="basic-app-tutorial">
-        <div>
-            <div class="row-col">
-                <img src="<?php echo plugins_url('images/tutorial/3_a.png', KINETISE_ROOT . DS . 'kinetise.php') ?>"
-                     width="300px" height="300px">
-                <p>Use list widget.</p>
-            </div>
-
-            <div class="row-col">
-                <img src="<?php echo plugins_url('images/tutorial/3_b.png', KINETISE_ROOT . DS . 'kinetise.php') ?>"
-                     width="300px" height="300px">
-                <p>On main screen use list widget with the following link and click <strong>"OK"</strong>:</p>
-                <p>
-                    <code><?php echo \site_url(); ?>/?kinetiseapi</code>
-                </p>
-            </div>
-
-            <div class="row-col">
-                <img src="<?php echo plugins_url('images/tutorial/3_c.png', KINETISE_ROOT . DS . 'kinetise.php') ?>"
-                     width="300px" height="300px">
-                <p>Use navigation tree on the left side and delete <strong>"Image"</strong> widget from list item</p>
-            </div>
-        </div>
-
-        <div>
-            <div class="row-col">
-                <img src="<?php echo plugins_url('images/tutorial/3_d.png', KINETISE_ROOT . DS . 'kinetise.php') ?>"
-                     width="300px" height="300px">
-                <p>Then expand <strong>"Vertical Container"</strong> and remove 2nd <strong>"Text"</strong> widget</p>
-            </div>
-
-            <div class="row-col">
-                <img src="<?php echo plugins_url('images/tutorial/3_e.png', KINETISE_ROOT . DS . 'kinetise.php') ?>"
-                     width="300px" height="300px">
-                <p>Time to add some screens. Let create three of them:</p>
-                <code><strong>Pages</strong>, <strong>Posts</strong> and <strong>Categories</strong></code>
-            </div>
-
-            <div class="row-col">
-                <img src="<?php echo plugins_url('images/tutorial/3_i.png', KINETISE_ROOT . DS . 'kinetise.php') ?>"
-                     width="300px" height="300px">
-                <p>Go to <strong>"Main screen"</strong> and from navigation tree edit <strong>"List"</strong>
-                    widget</p>
-            </div>
-        </div>
-
-        <div>
-            <div class="row-col">
-                <img src="<?php echo plugins_url('images/tutorial/3_f.png', KINETISE_ROOT . DS . 'kinetise.php') ?>"
-                     width="300px" height="300px">
-                <p>In <strong>"Settings"</strong> window under <strong>"Extra options"</strong> section create three item templates - "Pages", "Categories" and "Posts".</p>
-            </div>
-
-            <div class="row-col">
-                <img src="<?php echo plugins_url('images/tutorial/3_j.png', KINETISE_ROOT . DS . 'kinetise.php') ?>"
-                     width="300px" height="300px">
-                <p>Eeach item template should filter by <strong> "title" </strong> field and redirect to the corresponding details screen.</p>
-            </div>
-
-            <div class="row-col">
-                <img src="<?php echo plugins_url('images/tutorial/3_g.png', KINETISE_ROOT . DS . 'kinetise.php') ?>"
-                     width="300px" height="300px">
-                <p>Then using right mouse button click on <strong>"Pages"</strong> item inside list. You will be
-                    moved to details screen for pages.</p>
-            </div>
-        </div>
-        <div>
-            <div class="row-col">
-                <img src="<?php echo plugins_url('images/tutorial/3_h.png', KINETISE_ROOT . DS . 'kinetise.php') ?>"
-                     width="300px" height="300px">
-                <p>Place
-                    <string>"List"</string>
-                    widget on each new detail screen. In the <strong>"Settings"</strong> window select <strong>"Dynamic"</strong> source. From here
-                    you can select <strong>"URL"</strong> option to load your Wordpress pages.
-                </p>
-            </div>
         </div>
     </div>
 </div>

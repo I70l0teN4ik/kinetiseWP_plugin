@@ -1,1 +1,1 @@
-Kinetise wordpress plugin
+Kinetise WordPress plugin
