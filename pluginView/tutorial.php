@@ -7,8 +7,7 @@
     <h2 id="kinetise-tutorial-header" class="tutorial-header" data-container="basic-app-tutorial">
         <span data-container="basic-app-tutorial">Get started with Wordpress Template App by Kinetise</span>
         <span data-container="first-tutorial">Authorization / Registration / User roles</span>
-        <span data-container="second-tutorial">Add / Edit / Delete POST</span>
-        <span data-container="third-tutorial">Displaying list of pages / posts / categories</span>
+        <span data-container="second-tutorial">Add / Edit / Delete Post</span>
     </h2>
 
     <div class="tab" id="basic-app-tutorial">
