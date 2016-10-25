@@ -11,7 +11,6 @@
         <p>
             This plugins add functionality to return resources info in JSON.
         </p>
-        <iframe src="https://player.vimeo.com/video/181953664" width="640" height="401" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     </div>
     <div class="row">
         <div style="width: 100%;">
@@ -154,7 +153,7 @@
                             <td>Plain text password.</td>
                         </tr>
                         <tr>
-                            <td>password</td>
+                            <td>email</td>
                             <td><strong>body</strong></td>
                             <td>&#10006;</td>
                             <td>New user email.</td>
@@ -242,7 +241,7 @@
         "comment_count": "0",
         "filter": "raw",
         "comments_url": "<?php echo \site_url(); ?>/?kinetiseapi=comments&postId=2",
-        "comments_url_add": "<?php echo \site_url(); ?>/?kinetiseapi=comments:add&postId=2",
+        "comments_add_url": "<?php echo \site_url(); ?>/?kinetiseapi=comments:add&postId=2",
         "ancestors": [ ],
         "page_template": "default",
         "post_category": [ ],
@@ -279,7 +278,7 @@
                             <td>Link to get list of comments for page (appears only if comments are allowed). Click <strong>Comments</strong> for details.</td>
                         </tr>
                         <tr>
-                            <td>comments_url_add</td>
+                            <td>comments_add_url</td>
                             <td>Link to add new comment action (appears only if comments are allowed). Click <strong>Comments</strong> for details.</td>
                         </tr>
                         </tbody>
@@ -506,9 +505,9 @@
         "comment_count": "1",
         "filter": "raw",
         "comments_url": "<?php echo \site_url(); ?>/?kinetiseapi=comments&postId=1",
-        "comments_url_add": "<?php echo \site_url(); ?>/?kinetiseapi=comments:add&postId=1",
-        "edit_post_url": "<?php echo \site_url(); ?>/?kinetiseapi=posts:edit&postId=1",,
-        "delete_post_url": "<?php echo \site_url(); ?>/?kinetiseapi=posts:remove&postId=1",,
+        "comments_add_url": "<?php echo \site_url(); ?>/?kinetiseapi=comments:add&postId=1",
+        "post_edit_url": "<?php echo \site_url(); ?>/?kinetiseapi=posts:edit&postId=1",,
+        "post_delete_url": "<?php echo \site_url(); ?>/?kinetiseapi=posts:remove&postId=1",,
         "preview_url": "<?php echo \site_url(); ?>/?kinetiseapi=preview:post&postId=2",
         "ancestors": [],
         "page_template": "default",
@@ -549,15 +548,15 @@
                             <td>Link to get list of comments for current post (appears only if comments are allowed). Click <strong>Comments</strong> for details.</td>
                         </tr>
                         <tr>
-                            <td>comments_url_add</td>
+                            <td>comments_add_url</td>
                             <td>Link to add new comment action (appears only if comments are allowed). Click <strong>Comments</strong> for details.</td>
                         </tr>
                         <tr>
-                            <td>edit_post_url</td>
+                            <td>post_edit_url</td>
                             <td>Link to edit current post action (require user authorization). Click <strong>Authentication</strong> for details.</td>
                         </tr>
                         <tr>
-                            <td>delete_post_url</td>
+                            <td>post_delete_url</td>
                             <td>Link to delete current post action (require user authorization). Click <strong>Authentication</strong> for details.</td>
                         </tr>
                         </tbody>

@@ -21,11 +21,11 @@ class PostsMapper implements Mapper
 
             if ($post->comment_status == 'open') {
                 $post->comments_url = UrlGenerator::generate('comments', null, array('postId' => $postId));
-                $post->comments_url_add = UrlGenerator::generate('comments', 'add', array('postId' => $postId));
+                $post->comments_add_url = UrlGenerator::generate('comments', 'add', array('postId' => $postId));
             }
             if ($post->post_type == 'post') {
-                $post->edit_post_url = UrlGenerator::generate('posts', 'edit', array('postId' => $postId));
-                $post->delete_post_url = UrlGenerator::generate('posts', 'remove', array('postId' => $postId));
+                $post->post_edit_url = UrlGenerator::generate('posts', 'edit', array('postId' => $postId));
+                $post->post_delete_url = UrlGenerator::generate('posts', 'remove', array('postId' => $postId));
             }
 
             $this->data[$key] = $post->to_array();
@@ -68,7 +68,7 @@ class PostsMapper implements Mapper
             $this->data[$key]['post_modified_gmt'] = $date->format(\DateTime::RFC3339);
 
             $this->data[$key]['preview_url'] = UrlGenerator::generate('preview', null, array('postId' => $post->ID));
-            $this->data[$key]['description_preview_url'] = UrlGenerator::generate('preview', 'description', array('postId' => $post->ID));
+            $this->data[$key]['preview_description_url'] = UrlGenerator::generate('preview', 'description', array('postId' => $post->ID));
 
             $thumbnailId = \get_post_thumbnail_id($postId);
             $image = \wp_get_attachment_image_src($thumbnailId, 'full');
