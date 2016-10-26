@@ -144,6 +144,10 @@
 #kinetise-plugin-container .row-3 > div {
     text-align: center;
 }
+#kinetise-plugin-container .code {
+    padding: 1px;
+    background-color: #c6c6c6;
+}
 
 @media all and (min-width: 1100px) {
     #kinetise-plugin-container .row-3 > div.row-col,
@@ -176,7 +180,7 @@
     -moz-box-shadow:    0px 0px 19px 0px rgba(50, 50, 50, 0.5);
     box-shadow:         0px 0px 19px 0px rgba(50, 50, 50, 0.5);
     max-width: 100%;
-    max-height: 540px;
+    max-height: 410px;
     height: auto;
     width: auto;
     margin: 5px 0;
